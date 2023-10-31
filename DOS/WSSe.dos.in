@@ -1,0 +1,7 @@
+&DOS
+ prefix = 'WSSe'
+ outdir = './work'
+ fildos = 'WSSe.dos.dat'
+ emin = -15
+ emax = 15      
+/

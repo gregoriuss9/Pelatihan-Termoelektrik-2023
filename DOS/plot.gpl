@@ -1,0 +1,24 @@
+set terminal pdfcairo font 'Helvetica, 16'
+set output 'DOS.pdf'
+
+input = 'WSSe.dos.dat'
+
+E_fermi = -0.0783
+
+Emax = 4.0
+Emin = -4.0
+
+set title "WSSe Density of States"
+
+set yrange[Emin:Emax]
+
+set ytics 2
+#set xtics 2
+
+
+set ylabel "{/Helvetica-Italic E}-{/Helvetica-Italic E}_F (eV)"
+set xlabel "DOS (states/eV/u.c)"
+
+set xzeroaxis
+
+plot input using 2:($1-E_fermi) with lines notitle

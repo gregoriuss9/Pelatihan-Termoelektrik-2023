@@ -1,0 +1,41 @@
+&CONTROL
+calculation = 'nscf'
+prefix = 'WSSe'
+outdir = './work'
+verbosity = 'high'
+pseudo_dir = '/home/mainadmin/research/danu/pseudo'
+/
+
+&SYSTEM
+ibrav = 0
+nat = 3
+ntyp = 3
+occupations = 'tetrahedra'
+nbnd = 36
+ecutwfc=60
+ecutrho=240
+nosym = .TRUE.
+/
+
+&ELECTRONS
+conv_thr = 1d-8
+mixing_beta = 0.5
+/
+
+ATOMIC_SPECIES
+W 183.84 W.pbe-spn-kjpaw_psl.1.0.0.UPF
+S 32.065 S.pbe-n-kjpaw_psl.1.0.0.UPF 
+Se 78.96 Se.pbe-dn-kjpaw_psl.1.0.0.UPF
+
+CELL_PARAMETERS {angstrom}
+   3.164269496   0.000000000   0.000000000
+  -1.582134748   2.740337768   0.000000000
+   0.000000000   0.000000000  25.000000000
+
+ATOMIC_POSITIONS {crystal}
+Se            0.6666666667        0.3333333333        0.5690248504
+W             0.3333333333        0.6666666667        0.4967325940
+S             0.6666666667        0.3333333333       -0.5657574444
+
+K_POINTS {automatic}
+48 48 1  0 0 0
