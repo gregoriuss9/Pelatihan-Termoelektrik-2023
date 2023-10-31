@@ -1,0 +1,6 @@
+&BANDS
+outdir = './work'
+prefix = 'WSSe'
+filband = 'WSSe.bands'
+/
+

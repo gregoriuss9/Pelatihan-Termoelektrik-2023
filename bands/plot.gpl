@@ -1,0 +1,30 @@
+set terminal pdfcairo font 'Helvetica, 16'
+set output 'bands.pdf'
+
+input = 'WSSe.bands.gnu'
+
+E_fermi = -0.0783
+
+Emax = 4.0
+Emin = -4.0
+
+#k-path 
+G1  = 0.0000
+M   = 0.5774
+K   = 0.9107
+G2  = 1.5774
+
+set title "WSSe Band Structure "
+
+set yrange[Emin:Emax]
+set xrange[G1:G2]
+
+set ytics 2
+set xtics("{/Symbol G}" G1, "M" M, "K" K, "{/Symbol G}" G2)
+
+set ylabel "{/Helvetica-Italic E}-{/Helvetica-Italic E}_F (eV)"
+
+set arrow from M,Emin to M,Emax nohead
+set arrow from K,Emin to K,Emax nohead
+
+plot input using 1:($2-E_fermi) with lines notitle
