@@ -1,0 +1,37 @@
+&CONTROL
+calculation = 'scf'
+prefix = 'WSSe'
+outdir = './work'
+pseudo_dir = '/home/mainadmin/research/danu/pseudo'
+/
+
+&SYSTEM
+ibrav = 0
+nat = 3
+ntyp = 3
+ecutwfc=40
+ecutrho=160
+/
+
+&ELECTRONS
+conv_thr = 1d-8
+mixing_beta = 0.5
+/
+
+ATOMIC_SPECIES
+W 183.84 W.pbe-spn-kjpaw_psl.1.0.0.UPF
+S 32.065 S.pbe-n-kjpaw_psl.1.0.0.UPF 
+Se 78.96 Se.pbe-dn-kjpaw_psl.1.0.0.UPF
+
+CELL_PARAMETERS {angstrom}
+ 3.20000000  0.00000000  0.00000000
+ -1.60000000  2.77128129  0.00000000
+ 0.00000000  0.00000000  25.00000000
+
+ATOMIC_POSITIONS {crystal}
+ Se 0.6666667  0.33333333  0.58000000
+ W 0.3333333  0.66666667  0.50000000
+ S 0.6666667  0.33333333  -0.58000000
+
+K_POINTS {automatic}
+24 24 1  0 0 0
